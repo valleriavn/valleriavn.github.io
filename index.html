@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Portfolio</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: linear-gradient(135deg, 
+          #ffd1dc,  /* pastel pink */
+          #ffe4e1,  /* misty rose */
+          #e0bbff,  /* pastel purple */
+          #c1f0f6,  /* baby blue */
+          #d0f0c0,  /* mint */
+          #fff4b8   /* pastel yellow */
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 20s ease infinite;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: 'Times New Roman', sans-serif;
+        color: #fff;
+        text-align: center;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      main {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 2rem 3rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      h1 {
+        font-size: 3rem;
+        color: #ffffff;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        main {
+          padding: 1.5rem 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Kim Verlie's</h1>
+    </main>
+  </body>
+</html>
