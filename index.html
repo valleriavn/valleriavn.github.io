@@ -72,9 +72,7 @@
     <section class="container py-4" id="projects">
       <h2 class="section-heading text-center" data-aos="fade-up">Projects</h2>
 
-      <div class="row g-3" id="projects-container">
-        <!-- Projects will be dynamically loaded here -->
-      </div>
+      <div class="row g-3" id="projects-container"></div>
     </section>
 
     <section class="container py-4" data-aos="fade-up">
@@ -154,6 +152,7 @@
                 src="${project.image}"
                 class="project-image"
                 alt="${project.title}"
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'image-placeholder\\'>Image Loading</div>';"
               />
             </div>
             <div class="project-content">
