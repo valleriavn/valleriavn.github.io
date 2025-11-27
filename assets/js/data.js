@@ -20,7 +20,7 @@ const siteData = {
       title: "Stranger Things Cast Gallery",
       description:
         "Interactive gallery displaying Stranger Things characters with detailed profiles and animations.",
-      image: "assets/pics/GALLERY-stranger-things.png",
+      image: "assets/pics/gallery-stranger-things.png",
       viewLink: "https://valleriavn.github.io/stranger-things-cast-gallery/",
       docLink: "https://github.com/valleriavn/stranger-things-cast-gallery",
     },
