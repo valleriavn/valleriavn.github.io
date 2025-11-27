@@ -50,12 +50,12 @@ body {
 
 .hero-section {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
 }
 
 .profile-image {
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   max-width: 80%;
   border-radius: 50%;
   object-fit: cover;
@@ -64,41 +64,81 @@ body {
 }
 
 .intro-text {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .section-heading {
   font-weight: 600;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
 .project-card {
   background: rgba(255, 255, 255, 0.35);
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 20px; /* More rounded corners */
+  padding: 15px; /* Reduced padding */
   transition: 0.4s;
   backdrop-filter: blur(6px);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-image-container {
+  width: 100%;
+  height: 160px; /* Smaller height */
+  border-radius: 16px; /* More rounded corners */
+  margin-bottom: 12px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-image {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
   transition: 0.4s;
   filter: brightness(80%);
 }
 
 .project-card:hover .project-image {
   filter: brightness(100%);
-  scale: 1.03;
+  transform: scale(1.03);
+}
+
+.dark-mode .project-image-container {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.project-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.project-buttons {
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .theme-toggle {
@@ -153,4 +193,26 @@ body {
 .dark-mode .resume-placeholder {
   background-color: #2b2b2b;
   color: #e6e6e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  .profile-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .project-image-container {
+    height: 140px;
+  }
 }
