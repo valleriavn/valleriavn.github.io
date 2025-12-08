@@ -3,7 +3,7 @@ const siteData = {
     {
       title: "Apple Vision Pro Showcase",
       description:
-        "Website showcasing Apple Vision Pro's features with responsive design and modern UI components.",
+        "Responsive website showcasing Apple Vision Pro's features with modern UI components and interactive elements.",
       image: "assets/pics/sc-vision-pro-act4.png",
       viewLink: "https://valleriavn.github.io/vision-pro-showcase/",
       docLink: "https://github.com/valleriavn/vision-pro-showcase",
@@ -11,7 +11,7 @@ const siteData = {
     {
       title: "New York City Showcase",
       description:
-        "Digital guide to New York City highlighting famous landmarks and cultural destinations.",
+        "Interactive digital guide featuring New York City's famous landmarks with smooth animations and responsive design.",
       image: "assets/pics/sc-nyc-act5.png",
       viewLink: "https://valleriavn.github.io/new-york-showcase/",
       docLink: "https://github.com/valleriavn/new-york-showcase",
@@ -19,7 +19,7 @@ const siteData = {
     {
       title: "Stranger Things Cast Gallery",
       description:
-        "Interactive gallery displaying Stranger Things characters with detailed profiles and animations.",
+        "Dynamic character gallery with detailed profiles, hover effects, and responsive grid layout for Stranger Things cast.",
       image: "assets/pics/gallery-stranger-things.png",
       viewLink: "https://valleriavn.github.io/stranger-things-cast-gallery/",
       docLink: "https://github.com/valleriavn/stranger-things-cast-gallery",
