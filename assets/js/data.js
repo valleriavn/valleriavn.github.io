@@ -24,5 +24,12 @@ const siteData = {
       viewLink: "https://valleriavn.github.io/stranger-things-cast-gallery/",
       docLink: "https://github.com/valleriavn/stranger-things-cast-gallery",
     },
+    {
+      title: "Valorant Agents Gallery",
+      description: "Interactive gallery of Valorant agents with search functionality and detailed character information using Valorant API.",
+      image: "assets/pics/valorant-agents-gallery.png",
+      viewLink: "https://valleriavn.github.io/valorant-agents-gallery/index.html",
+      docLink: "https://github.com/valleriavn/valorant-agents-gallery",
+    },
   ],
 };
