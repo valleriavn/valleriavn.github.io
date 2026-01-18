@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>valleriavn</title>
+
+    <link rel="icon" href="assets/img/logo.png" type="image/png" />
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/png" />
+
     <meta
       name="title"
       property="og:title"
@@ -13,7 +17,7 @@
     <meta
       name="image"
       property="og:image"
-      content="assets/pics/profile-githubpage.jpg"
+      content="assets/img/profile-githubpage.png"
     />
     <meta
       name="description"
@@ -44,7 +48,7 @@
               <div class="profile-image-container">
                 <div class="image-frame">
                   <img
-                    src="assets/pics/profile-githubpage.jpg"
+                    src="assets/img/profile-githubpage.png"
                     alt="Kim Verlie Vivas Napolitano"
                     class="profile-img"
                   />
@@ -109,7 +113,10 @@
                   <a
                     href="#about"
                     class="nav-link active"
-                    onclick="loadPage('about'); return false;"
+                    onclick="
+                      loadPage('about');
+                      return false;
+                    "
                     >About</a
                   >
                 </li>
@@ -117,7 +124,10 @@
                   <a
                     href="#projects"
                     class="nav-link"
-                    onclick="loadPage('projects'); return false;"
+                    onclick="
+                      loadPage('projects');
+                      return false;
+                    "
                     >Projects</a
                   >
                 </li>
@@ -125,7 +135,10 @@
                   <a
                     href="#skills"
                     class="nav-link"
-                    onclick="loadPage('skills'); return false;"
+                    onclick="
+                      loadPage('skills');
+                      return false;
+                    "
                     >Skills</a
                   >
                 </li>
@@ -171,6 +184,7 @@
       AOS.init({ duration: 800, once: true, offset: 50 });
       const themeToggle = document.getElementById("themeToggle");
       const themeIcon = document.getElementById("themeIcon");
+
       function setTheme(mode) {
         if (mode === "dark") {
           document.body.classList.add("dark-mode");
@@ -182,15 +196,46 @@
           themeIcon.classList.add("fa-moon");
         }
       }
-      const savedTheme = localStorage.getItem("theme") || "light";
+
+      // Try localStorage first, fall back to sessionStorage
+      function getStoredTheme() {
+        try {
+          // Try localStorage
+          return localStorage.getItem("theme") || "light";
+        } catch (e) {
+          try {
+            // Fall back to sessionStorage
+            return sessionStorage.getItem("theme") || "light";
+          } catch (e2) {
+            return "light";
+          }
+        }
+      }
+
+      function storeTheme(theme) {
+        try {
+          localStorage.setItem("theme", theme);
+        } catch (e) {
+          try {
+            sessionStorage.setItem("theme", theme);
+          } catch (e2) {
+            // Both storage methods blocked - theme won't persist
+          }
+        }
+      }
+
+      // Load saved theme
+      const savedTheme = getStoredTheme();
       setTheme(savedTheme);
+
       themeToggle.addEventListener("click", () => {
         const newTheme = document.body.classList.contains("dark-mode")
           ? "light"
           : "dark";
-        localStorage.setItem("theme", newTheme);
+        storeTheme(newTheme);
         setTheme(newTheme);
       });
+
       window.addEventListener("DOMContentLoaded", () => {
         loadPage("about");
       });

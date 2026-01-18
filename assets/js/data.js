@@ -4,7 +4,7 @@ const siteData = {
       title: "Apple Vision Pro Showcase",
       description:
         "Responsive website showcasing Apple Vision Pro's features with modern UI components and interactive elements.",
-      image: "assets/pics/sc-vision-pro-act4.png",
+      image: "assets/img/sc-vision-pro-act4.png",
       viewLink: "https://valleriavn.github.io/vision-pro-showcase/",
       docLink: "https://github.com/valleriavn/vision-pro-showcase",
     },
@@ -12,7 +12,7 @@ const siteData = {
       title: "New York City Showcase",
       description:
         "Interactive digital guide featuring New York City's famous landmarks with smooth animations and responsive design.",
-      image: "assets/pics/sc-nyc-act5.png",
+      image: "assets/img/sc-nyc-act5.png",
       viewLink: "https://valleriavn.github.io/new-york-showcase/",
       docLink: "https://github.com/valleriavn/new-york-showcase",
     },
@@ -20,15 +20,17 @@ const siteData = {
       title: "Stranger Things Cast Gallery",
       description:
         "Dynamic character gallery with detailed profiles, hover effects, and responsive grid layout for Stranger Things cast.",
-      image: "assets/pics/gallery-stranger-things.png",
+      image: "assets/img/gallery-stranger-things.png",
       viewLink: "https://valleriavn.github.io/stranger-things-cast-gallery/",
       docLink: "https://github.com/valleriavn/stranger-things-cast-gallery",
     },
     {
       title: "Valorant Agents Gallery",
-      description: "Interactive gallery of Valorant agents with search functionality and detailed character information using Valorant API.",
-      image: "assets/pics/valorant-agents-gallery.png",
-      viewLink: "https://valleriavn.github.io/valorant-agents-gallery/index.html",
+      description:
+        "Interactive gallery of Valorant agents with search functionality and detailed character information using Valorant API.",
+      image: "assets/img/valorant-agents-gallery.png",
+      viewLink:
+        "https://valleriavn.github.io/valorant-agents-gallery/index.html",
       docLink: "https://github.com/valleriavn/valorant-agents-gallery",
     },
   ],
