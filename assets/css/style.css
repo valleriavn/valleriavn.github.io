@@ -315,10 +315,23 @@ body {
   font-weight: 500;
   font-size: 1rem;
 }
+.profile-actions {
+  margin: 1.5rem 0;
+}
+.profile-actions .btn {
+  padding: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-width: 2px;
+}
+.profile-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 .profile-links {
   display: flex;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .profile-link {
   flex: 1;
@@ -530,17 +543,48 @@ body {
   background: var(--dark-card);
   border-color: var(--dark-border);
 }
-.modal-content {
+#resumeModal .modal-content {
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--beige-border);
 }
-.dark-mode .modal-content {
-  background: var(--dark-card);
+#resumeModal .modal-header {
+  background-color: var(--beige-light);
+  border-bottom: 1px solid var(--beige-border);
+  padding: 1rem 1.5rem;
+}
+.dark-mode #resumeModal .modal-header {
+  background-color: var(--dark-card);
+  border-bottom-color: var(--dark-border);
+}
+#resumeModal .modal-body {
+  padding: 0;
+  background-color: var(--beige-light);
+}
+.dark-mode #resumeModal .modal-body {
+  background-color: var(--dark-bg);
+}
+#resumeModal .modal-footer {
+  background-color: var(--beige-light);
+  border-top: 1px solid var(--beige-border);
+  padding: 0.75rem 1.5rem;
+}
+.dark-mode #resumeModal .modal-footer {
+  background-color: var(--dark-card);
+  border-top-color: var(--dark-border);
+}
+#resumeModal .modal-title {
+  font-weight: 600;
+  color: var(--beige-text);
+}
+.dark-mode #resumeModal .modal-title {
   color: var(--dark-text);
 }
-.dark-mode .btn-close {
-  filter: invert(1);
+#resumeIframe {
+  background: white;
+}
+.dark-mode #resumeIframe {
+  background: #f9f9f9;
 }
 .resume-placeholder {
   padding: 3rem 2rem;
@@ -608,6 +652,13 @@ body {
     margin: 0.5rem 0;
     display: none;
   }
+  .profile-actions {
+    margin: 0.5rem 0;
+  }
+  .profile-actions .btn {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
   .profile-links {
     gap: 0.5rem;
     margin-top: 0.5rem;
@@ -634,6 +685,12 @@ body {
   .nav-list {
     gap: 1rem;
   }
+  #resumeModal .modal-dialog {
+    margin: 0.5rem;
+  }
+  #resumeIframe {
+    height: 500px;
+  }
 }
 @media (max-width: 576px) {
   .profile-card {
@@ -655,5 +712,17 @@ body {
   }
   .section-title {
     font-size: 2rem !important;
+  }
+  #resumeModal .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  #resumeModal .modal-header .d-flex {
+    width: 100%;
+    justify-content: space-between;
+  }
+  #resumeIframe {
+    height: 400px;
   }
 }

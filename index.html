@@ -150,28 +150,41 @@
       </div>
     </div>
     <div class="modal fade" id="resumeModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Resume Preview</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="resume-placeholder">
-              <i class="fas fa-file-alt fa-3x mb-3"></i>
-              <h4>Resume in Progress</h4>
-              <p class="text-muted">
-                Currently updating my resume with latest projects and
-                experiences.
-              </p>
-              <small class="text-muted"
-                >Will be available for download soon.</small
+            <h5 class="modal-title">My Resume / CV</h5>
+            <div class="d-flex gap-2">
+              <a
+                href="assets/docs/kim-verlie-cv.pdf"
+                class="btn btn-sm btn-primary"
+                download="Kim-Verlie-Napolitano-CV.pdf"
               >
+                <i class="fas fa-download me-1"></i> Download PDF
+              </a>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
             </div>
+          </div>
+          <div class="modal-body p-0">
+            <iframe
+              src="assets/docs/CV_NAPOLITANO.pdf"
+              width="100%"
+              height="700px"
+              style="border: none"
+              title="Kim Verlie Napolitano Resume"
+              id="resumeIframe"
+            >
+            </iframe>
+          </div>
+          <div class="modal-footer justify-content-start">
+            <small class="text-muted"
+              >For best experience, download the PDF to view all formatting
+              correctly.</small
+            >
           </div>
         </div>
       </div>
@@ -197,14 +210,11 @@
         }
       }
 
-      // Try localStorage first, fall back to sessionStorage
       function getStoredTheme() {
         try {
-          // Try localStorage
           return localStorage.getItem("theme") || "light";
         } catch (e) {
           try {
-            // Fall back to sessionStorage
             return sessionStorage.getItem("theme") || "light";
           } catch (e2) {
             return "light";
@@ -218,13 +228,10 @@
         } catch (e) {
           try {
             sessionStorage.setItem("theme", theme);
-          } catch (e2) {
-            // Both storage methods blocked - theme won't persist
-          }
+          } catch (e2) {}
         }
       }
 
-      // Load saved theme
       const savedTheme = getStoredTheme();
       setTheme(savedTheme);
 
