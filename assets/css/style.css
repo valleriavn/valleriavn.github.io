@@ -672,11 +672,13 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: left;
   }
 
   .profile-title {
     font-size: 0.9rem;
     margin-bottom: 0.75rem;
+    text-align: left;
   }
 
   .profile-details {
@@ -686,12 +688,15 @@ body {
   .profile-links {
     margin-top: 0.5rem;
     gap: 0.5rem;
+    justify-content: flex-start;
   }
 
   .profile-link {
     padding: 0.4rem 0.4rem;
     font-size: 0.8rem;
     gap: 0.3rem;
+    flex: 0 1 auto;
+    min-width: auto;
   }
 
   .profile-link i {
@@ -715,22 +720,44 @@ body {
     padding: 0.4rem 0;
   }
 
+  .about-page .greeting {
+    text-align: left;
+  }
+
   .about-page .name-title {
     font-size: 2.2rem;
+    text-align: left;
+  }
+
+  .about-page .about-text {
+    text-align: left;
   }
 
   .about-page .about-text p {
     font-size: 1rem;
+    text-align: left;
   }
 
   .action-buttons {
     flex-direction: column;
     gap: 0.75rem;
+    align-items: flex-start;
   }
 
   .action-buttons .btn {
-    min-width: 100%;
-    width: 100%;
+    min-width: 200px;
+    width: auto;
+    margin: 0;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .projects-page .section-title {
+    text-align: left;
+  }
+
+  .projects-page .section-description {
+    text-align: left;
   }
 
   .projects-grid {
@@ -738,49 +765,73 @@ body {
     gap: 1.5rem;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .project-card {
     max-width: 100%;
+    text-align: left;
   }
 
-  .project-image {
-    height: 180px;
+  .project-content {
+    text-align: left;
   }
 
   .project-title {
     font-size: 1.2rem;
+    text-align: left;
   }
 
   .project-description {
     font-size: 0.9rem;
+    text-align: left;
   }
 
   .project-buttons {
     flex-direction: row;
     gap: 0.75rem;
+    justify-content: flex-start;
   }
 
   .project-buttons .btn {
     font-size: 0.85rem;
     padding: 0.45rem 0.45rem;
+    flex: 0 1 auto;
+    min-width: 100px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .skills-page .section-title {
+    text-align: left;
+  }
+
+  .skills-page .section-description {
+    text-align: left;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .skill-category {
     padding: 1.25rem;
+    text-align: left;
   }
 
   .skill-category h3 {
     font-size: 1.1rem;
     margin-bottom: 1rem;
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .skill-items {
+    justify-content: flex-start;
   }
 
   .skill-item {
     padding: 0.45rem 0.9rem;
     font-size: 0.85rem;
+    text-align: left;
   }
 }
 
@@ -797,10 +848,12 @@ body {
 
   .profile-name {
     font-size: 1.1rem;
+    text-align: left;
   }
 
   .profile-title {
     font-size: 0.85rem;
+    text-align: left;
   }
 
   .profile-link {
@@ -823,10 +876,20 @@ body {
 
   .about-page .name-title {
     font-size: 2rem;
+    text-align: left;
   }
 
   .about-page .about-text p {
     font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .action-buttons .btn {
+    min-width: 180px;
+  }
+
+  .project-buttons .btn {
+    min-width: 90px;
   }
 }
 
@@ -843,15 +906,18 @@ body {
 
   .profile-name {
     font-size: 1rem;
+    text-align: left;
   }
 
   .profile-title {
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
+    text-align: left;
   }
 
   .profile-links {
     gap: 0.35rem;
+    justify-content: flex-start;
   }
 
   .profile-link {
@@ -874,37 +940,56 @@ body {
 
   .nav-list {
     gap: 0.8rem;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
   }
 
   .nav-link {
     font-size: 0.85rem;
     padding: 0.3rem 0;
+    text-align: left;
   }
 
   .about-page .greeting {
     font-size: 0.9rem;
+    text-align: left;
   }
 
   .about-page .name-title {
     font-size: 1.6rem;
     margin-bottom: 1rem;
+    text-align: left;
   }
 
   .about-page .about-text p {
     font-size: 0.9rem;
     margin-bottom: 0.8rem;
+    text-align: left;
+  }
+
+  .action-buttons {
+    align-items: flex-start;
+  }
+
+  .action-buttons .btn {
+    min-width: 160px;
+    width: auto;
+    text-align: left;
+    justify-content: flex-start;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
   }
 
   .section-title {
     font-size: 2rem !important;
     margin-bottom: 0.5rem !important;
+    text-align: left !important;
   }
 
   .section-description {
     font-size: 0.9rem !important;
     margin-bottom: 1.5rem !important;
+    text-align: left !important;
   }
 
   .project-image {
@@ -913,45 +998,59 @@ body {
 
   .project-content {
     padding: 1rem;
+    text-align: left;
   }
 
   .project-title {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+    text-align: left;
   }
 
   .project-description {
     font-size: 0.85rem;
     margin-bottom: 0.75rem;
+    text-align: left;
   }
 
   .project-buttons {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
     padding-top: 0.75rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .project-buttons .btn {
-    width: 100%;
-    font-size: 0.85rem;
-    padding: 0.5rem;
+    width: auto;
+    min-width: 85px;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+    flex: 0 1 auto;
+    text-align: center;
+    justify-content: center;
   }
 
   .skill-category {
     padding: 1rem;
+    text-align: left;
   }
 
   .skill-category h3 {
     font-size: 1rem;
     gap: 0.3rem;
+    text-align: left;
+    justify-content: flex-start;
   }
 
   .skill-items {
     gap: 0.5rem;
+    justify-content: flex-start;
   }
 
   .skill-item {
     padding: 0.35rem 0.7rem;
     font-size: 0.8rem;
+    text-align: left;
   }
 }
