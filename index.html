@@ -42,7 +42,7 @@
   <body>
     <div class="container-fluid main-wrapper">
       <div class="row g-0">
-        <div class="col-12 col-lg-4 profile-section fixed-profile order-lg-2">
+        <div class="col-12 col-lg-4 profile-section fixed-profile order-lg-1">
           <div class="profile-wrapper">
             <div class="profile-card">
               <div class="profile-image-container">
@@ -60,21 +60,21 @@
                 <div class="profile-details">
                   <div class="detail-item">
                     <i class="fas fa-envelope detail-icon"></i>
-                    <div>
+                    <div class="detail-content">
                       <span class="detail-label">Email</span>
                       <span class="detail-value">nkimverlie@gmail.com</span>
                     </div>
                   </div>
                   <div class="detail-item">
                     <i class="fas fa-map-marker-alt detail-icon"></i>
-                    <div>
+                    <div class="detail-content">
                       <span class="detail-label">Location</span>
                       <span class="detail-value">Batangas, Philippines</span>
                     </div>
                   </div>
                   <div class="detail-item">
                     <i class="fas fa-phone detail-icon"></i>
-                    <div>
+                    <div class="detail-content">
                       <span class="detail-label">Mobile</span>
                       <span class="detail-value">+63 962 658 6206</span>
                     </div>
@@ -86,28 +86,28 @@
                     target="_blank"
                     class="profile-link"
                   >
-                    <i class="fab fa-linkedin"></i>LinkedIn
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
                   </a>
                   <a
                     href="https://github.com/valleriavn"
                     target="_blank"
                     class="profile-link"
                   >
-                    <i class="fab fa-github"></i>GitHub
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
                   </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div
-          class="col-12 col-lg-8 content-section scrollable-content order-lg-1"
+          class="col-12 col-lg-8 content-section scrollable-content order-lg-2"
         >
           <div class="content-wrapper">
             <nav class="main-nav" data-aos="fade-down">
-              <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon" id="themeIcon"></i>
-              </button>
               <ul class="nav-list">
                 <li>
                   <a
@@ -149,99 +149,13 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="resumeModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">My Resume / CV</h5>
-            <div class="d-flex gap-2">
-              <a
-                href="assets/docs/kim-verlie-cv.pdf"
-                class="btn btn-sm btn-primary"
-                download="Kim-Verlie-Napolitano-CV.pdf"
-              >
-                <i class="fas fa-download me-1"></i> Download PDF
-              </a>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-              ></button>
-            </div>
-          </div>
-          <div class="modal-body p-0">
-            <iframe
-              src="assets/docs/CV_NAPOLITANO.pdf"
-              width="100%"
-              height="700px"
-              style="border: none"
-              title="Kim Verlie Napolitano Resume"
-              id="resumeIframe"
-            >
-            </iframe>
-          </div>
-          <div class="modal-footer justify-content-start">
-            <small class="text-muted"
-              >For best experience, download the PDF to view all formatting
-              correctly.</small
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/data.js"></script>
     <script src="assets/js/navigate.js"></script>
     <script>
       AOS.init({ duration: 800, once: true, offset: 50 });
-      const themeToggle = document.getElementById("themeToggle");
-      const themeIcon = document.getElementById("themeIcon");
-
-      function setTheme(mode) {
-        if (mode === "dark") {
-          document.body.classList.add("dark-mode");
-          themeIcon.classList.remove("fa-moon");
-          themeIcon.classList.add("fa-sun");
-        } else {
-          document.body.classList.remove("dark-mode");
-          themeIcon.classList.remove("fa-sun");
-          themeIcon.classList.add("fa-moon");
-        }
-      }
-
-      function getStoredTheme() {
-        try {
-          return localStorage.getItem("theme") || "light";
-        } catch (e) {
-          try {
-            return sessionStorage.getItem("theme") || "light";
-          } catch (e2) {
-            return "light";
-          }
-        }
-      }
-
-      function storeTheme(theme) {
-        try {
-          localStorage.setItem("theme", theme);
-        } catch (e) {
-          try {
-            sessionStorage.setItem("theme", theme);
-          } catch (e2) {}
-        }
-      }
-
-      const savedTheme = getStoredTheme();
-      setTheme(savedTheme);
-
-      themeToggle.addEventListener("click", () => {
-        const newTheme = document.body.classList.contains("dark-mode")
-          ? "light"
-          : "dark";
-        storeTheme(newTheme);
-        setTheme(newTheme);
-      });
 
       window.addEventListener("DOMContentLoaded", () => {
         loadPage("about");
