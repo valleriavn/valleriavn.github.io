@@ -99,6 +99,10 @@ body {
   text-align: center;
 }
 
+.profile-name-block {
+  margin-bottom: 1rem;
+}
+
 .profile-name {
   font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
@@ -197,14 +201,14 @@ body {
   width: var(--content-width);
   padding: 2rem 3rem;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   position: relative;
   background: var(--beige-light);
 }
 
-.scrollable-content {
-  scroll-behavior: smooth;
+.content-section.scrollable {
+  overflow-y: auto;
 }
 
 .scrollable-content::-webkit-scrollbar {
@@ -225,6 +229,7 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding-bottom: 3rem;
+  min-height: 100%;
 }
 
 .main-nav {
@@ -278,11 +283,16 @@ body {
 }
 
 #maincontent {
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
 }
 
 .page-content {
   animation: fadeIn 0.5s ease-out;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -294,6 +304,10 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.about-page {
+  justify-content: center;
 }
 
 .about-page .greeting {
@@ -418,6 +432,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .project-card {
@@ -540,6 +555,10 @@ body {
   box-shadow: none;
 }
 
+.skills-page {
+  justify-content: center;
+}
+
 .skills-page .section-title {
   font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
@@ -598,20 +617,28 @@ body {
   border: 1px solid rgba(212, 191, 160, 0.3);
 }
 
+/* =============================================
+   MOBILE STYLES - Profile scrolls away normally
+   ============================================= */
+
 @media (max-width: 992px) {
   :root {
     --profile-width: 100%;
     --content-width: 100%;
   }
 
+  html,
   body {
     height: auto;
+    overflow-x: hidden;
     overflow-y: auto;
   }
 
   .main-wrapper {
     height: auto;
     overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
 
   .profile-section {
@@ -622,18 +649,16 @@ body {
     border-bottom: 1px solid var(--beige-border);
     padding: 1.5rem;
     overflow-y: visible;
-  }
-
-  .content-section {
-    margin-left: 0;
-    width: 100%;
-    height: auto;
-    padding: 1.5rem;
-    overflow-y: visible;
+    background: rgba(244, 240, 232, 0.5);
+    backdrop-filter: none;
+    box-shadow: none;
+    justify-content: flex-start;
   }
 
   .profile-wrapper {
     height: auto;
+    align-items: center;
+    justify-content: center;
   }
 
   .profile-card {
@@ -643,6 +668,10 @@ body {
     align-items: center;
     gap: 1.5rem;
     max-width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--beige-border);
+    background: white;
   }
 
   .profile-image-container {
@@ -664,21 +693,29 @@ body {
     text-align: left;
     flex: 1;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-name-block {
+    min-width: 0;
+    margin-bottom: 0.5rem;
   }
 
   .profile-name {
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
     text-align: left;
   }
 
   .profile-title {
     font-size: 0.9rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     text-align: left;
+    white-space: normal;
   }
 
   .profile-details {
@@ -692,21 +729,43 @@ body {
   }
 
   .profile-link {
-    padding: 0.4rem 0.4rem;
+    padding: 0.4rem 0.6rem;
     font-size: 0.8rem;
     gap: 0.3rem;
     flex: 0 1 auto;
     min-width: auto;
+    border-radius: 8px;
+    background: var(--beige-medium);
+    color: var(--beige-text);
   }
 
   .profile-link i {
     font-size: 0.8rem;
   }
 
+  .content-section {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    overflow-y: visible;
+    overflow-x: hidden;
+  }
+
+  .content-section.scrollable-mobile {
+    overflow-y: visible;
+    height: auto;
+  }
+
   .main-nav {
-    margin-bottom: 1.5rem;
-    padding: 1rem 0;
+    position: sticky;
+    top: 0;
     background: var(--beige-light);
+    z-index: 100;
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .nav-list {
@@ -718,6 +777,19 @@ body {
   .nav-link {
     font-size: 1rem;
     padding: 0.4rem 0;
+  }
+
+  #maincontent {
+    min-height: auto;
+  }
+
+  .page-content {
+    min-height: auto;
+  }
+
+  .about-page {
+    justify-content: flex-start;
+    min-height: auto;
   }
 
   .about-page .greeting {
@@ -763,6 +835,7 @@ body {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding-bottom: 1rem;
   }
 
   .project-card {
@@ -797,6 +870,11 @@ body {
     min-width: 100px;
     text-align: center;
     justify-content: center;
+  }
+
+  .skills-page {
+    justify-content: flex-start;
+    min-height: auto;
   }
 
   .skills-page .section-title {
@@ -836,9 +914,13 @@ body {
 }
 
 @media (max-width: 768px) {
+  .profile-section {
+    padding: 1rem;
+  }
+
   .profile-card {
     padding: 1.25rem;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .profile-image-container {
@@ -848,16 +930,14 @@ body {
 
   .profile-name {
     font-size: 1.1rem;
-    text-align: left;
   }
 
   .profile-title {
     font-size: 0.85rem;
-    text-align: left;
   }
 
   .profile-link {
-    padding: 0.35rem 0.35rem;
+    padding: 0.35rem 0.5rem;
     font-size: 0.75rem;
   }
 
@@ -894,9 +974,13 @@ body {
 }
 
 @media (max-width: 480px) {
+  .profile-section {
+    padding: 0.75rem;
+  }
+
   .profile-card {
     padding: 1rem;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .profile-image-container {
@@ -906,22 +990,19 @@ body {
 
   .profile-name {
     font-size: 1rem;
-    text-align: left;
   }
 
   .profile-title {
     font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    text-align: left;
+    margin-bottom: 0.25rem;
   }
 
   .profile-links {
     gap: 0.35rem;
-    justify-content: flex-start;
   }
 
   .profile-link {
-    padding: 0.3rem 0.25rem;
+    padding: 0.3rem 0.4rem;
     font-size: 0.7rem;
   }
 

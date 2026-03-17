@@ -1,13 +1,51 @@
+function isMobile() {
+  return window.innerWidth <= 992;
+}
+
+function scrollToTop() {
+  if (isMobile()) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    const maincontent = document.getElementById("maincontent");
+    if (maincontent) maincontent.scrollTo(0, 0);
+    const contentSection = document.querySelector(".content-section");
+    if (contentSection) contentSection.scrollTo(0, 0);
+  }
+}
+
+function setScrollable(enable) {
+  const contentSection = document.querySelector(".content-section");
+  if (!contentSection) return;
+
+  if (enable) {
+    contentSection.classList.add("scrollable");
+    contentSection.style.overflowY = "auto";
+  } else {
+    contentSection.classList.remove("scrollable");
+    contentSection.style.overflowY = "hidden";
+  }
+}
+
 function loadPage(page) {
   const maincontent = document.getElementById("maincontent");
   const navLinks = document.querySelectorAll(".nav-link");
+
   navLinks.forEach((link) => {
     link.classList.remove("active");
     if (link.getAttribute("href") === `#${page}`) {
       link.classList.add("active");
     }
   });
-  maincontent.scrollTo(0, 0);
+
+  scrollToTop();
+
+  // Enable/disable scrolling based on page
+  if (page === "projects") {
+    setScrollable(true);
+  } else {
+    setScrollable(false);
+  }
+
   let content = "";
   switch (page) {
     case "about":
@@ -108,3 +146,17 @@ function loadProjects() {
     }, 200);
   }
 }
+
+// Handle resize events
+window.addEventListener("resize", function () {
+  const currentPage =
+    document
+      .querySelector(".nav-link.active")
+      ?.getAttribute("href")
+      ?.replace("#", "") || "about";
+  if (currentPage === "projects") {
+    setScrollable(true);
+  } else {
+    setScrollable(false);
+  }
+});
