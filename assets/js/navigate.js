@@ -39,7 +39,6 @@ function loadPage(page) {
 
   scrollToTop();
 
-  // Enable/disable scrolling based on page
   if (page === "projects") {
     setScrollable(true);
   } else {
@@ -58,7 +57,10 @@ function loadPage(page) {
           <p>I believe in continuous growth and enjoy the process of transforming ideas into functional, user-friendly applications.</p>
         </div>
         <div class="action-buttons">
-          <a href="#projects" class="btn btn-primary" onclick="loadPage('projects'); return false;">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resumeViewModal">
+            <i class="fas fa-file-alt me-2"></i>View Resume
+          </button>
+          <a href="#projects" class="btn btn-outline" onclick="loadPage('projects'); return false;">
             <i class="fas fa-code me-2"></i>Explore Projects
           </a>
         </div>
@@ -147,7 +149,6 @@ function loadProjects() {
   }
 }
 
-// Handle resize events
 window.addEventListener("resize", function () {
   const currentPage =
     document

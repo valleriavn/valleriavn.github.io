@@ -617,10 +617,6 @@ body {
   border: 1px solid rgba(212, 191, 160, 0.3);
 }
 
-/* =============================================
-   MOBILE STYLES - Profile scrolls away normally
-   ============================================= */
-
 @media (max-width: 992px) {
   :root {
     --profile-width: 100%;
@@ -752,11 +748,6 @@ body {
     overflow-x: hidden;
   }
 
-  .content-section.scrollable-mobile {
-    overflow-y: visible;
-    height: auto;
-  }
-
   .main-nav {
     position: sticky;
     top: 0;
@@ -765,7 +756,6 @@ body {
     margin-bottom: 1.5rem;
     padding: 0.9rem 0;
     backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
 
   .nav-list {
@@ -1133,5 +1123,73 @@ body {
     padding: 0.35rem 0.7rem;
     font-size: 0.8rem;
     text-align: left;
+  }
+}
+
+#resumeViewModal .modal-content {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--beige-border);
+}
+
+#resumeViewModal .modal-header {
+  background-color: var(--beige-light);
+  border-bottom: 1px solid var(--beige-border);
+  padding: 1rem 1.5rem;
+}
+
+#resumeViewModal .modal-body {
+  padding: 0;
+  background-color: var(--beige-light);
+}
+
+#resumeViewModal .modal-footer {
+  background-color: var(--beige-light);
+  border-top: 1px solid var(--beige-border);
+  padding: 0.75rem 1.5rem;
+}
+
+#resumeViewModal .modal-title {
+  font-weight: 600;
+  color: var(--beige-text);
+}
+
+#resumeViewIframe {
+  background: white;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  #resumeViewModal .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+  }
+
+  #resumeViewIframe {
+    height: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  #resumeViewModal .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  #resumeViewModal .modal-header .d-flex {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #resumeViewModal .modal-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  #resumeViewIframe {
+    height: 350px;
   }
 }
